@@ -10,18 +10,26 @@ namespace Unit_Converter.Controllers
     public class UnitConverterController : ControllerBase
     {
 
-        private readonly IConverterFactory _converterFactory;
+        private readonly IConverterService _converterService;
 
-        public UnitConverterController(IConverterFactory converterFactory)
+        public UnitConverterController(IConverterService converterService)
         {
-            _converterFactory = converterFactory;
+            _converterService = converterService;
         }
 
         [HttpGet]
         [Route("Convert")]
-        public IActionResult ConvertUnit([FromQuery] string unitType, [FromQuery] ConverterUnits value)
+        public IActionResult ConvertUnit([FromQuery] double value, [FromQuery] ConverterUnits unitType)
         {
-            return Ok(null);
+            var result = _converterService.Convertunits(unitType, value);
+            if(result != null)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest("Invalid unit type or value.");
+            }
         }
     }
 }
