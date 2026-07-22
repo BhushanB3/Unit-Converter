@@ -1,4 +1,5 @@
-﻿using Unit_Converter.Services.IServices;
+﻿using Unit_Converter.Constants;
+using Unit_Converter.Services.IServices;
 
 namespace Unit_Converter.Services.Implementations
 {
@@ -6,7 +7,8 @@ namespace Unit_Converter.Services.Implementations
     {
         public string Convert(double value)
         {
-            return "50kg hai bhai";
+            var convertedValue = value * ConversionConstants.KilogramToPound;
+            return convertedValue.ToString() + " Pounds";
         }
     }
 }

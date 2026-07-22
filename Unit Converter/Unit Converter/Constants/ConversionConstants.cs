@@ -7,6 +7,6 @@
         public const double CelciusToFahrenitMultipler = 1.8;
         public const double CelciusToFahrenitAddition = 32;
 
-        public const double KilogramToPound = 2.20462
+        public const double KilogramToPound = 2.20462;
     }
 }

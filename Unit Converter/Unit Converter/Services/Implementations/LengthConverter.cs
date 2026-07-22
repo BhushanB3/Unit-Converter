@@ -6,7 +6,8 @@ namespace Unit_Converter.Services.Implementations
     {
         public string Convert(double value)
         {
-            return "100m hai bhai";
+            var convertedValue = value * Constants.ConversionConstants.MetersToFeet;
+            return convertedValue.ToString() + " Feet";
         }
     }
 }
