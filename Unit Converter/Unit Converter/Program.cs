@@ -1,3 +1,7 @@
+using Unit_Converter.Services;
+using Unit_Converter.Services.Factory;
+using Unit_Converter.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IConverterFactory, ConverterFactory>();
+builder.Services.AddScoped<IConverterService, ConverterService>();
 
 var app = builder.Build();
 

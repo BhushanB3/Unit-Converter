@@ -1,4 +1,5 @@
 ﻿using Unit_Converter.Enums;
+using Unit_Converter.Services.Implementations;
 using Unit_Converter.Services.Interfaces;
 using Unit_Converter.Services.IServices;
 
@@ -17,7 +18,7 @@ namespace Unit_Converter.Services.Factory
                 case ConverterUnits.weight:
                     return new WeightConverter();
                 default:
-                    throw new ArgumentException("Invalid converter type");
+                    return null;
             }
         }
     }

@@ -1,12 +1,12 @@
 ﻿using Unit_Converter.Services.IServices;
 
-namespace Unit_Converter.Services
+namespace Unit_Converter.Services.Implementations
 {
     public class TemperatureConverter : IUnitToConvert
     {
-        public double Convert(double value)
+        public string Convert(double value)
         {
-            return 0.0;
+            return "32.7F hai bhai";
         }
     }
 }

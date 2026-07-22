@@ -2,6 +2,6 @@
 {
     public interface IUnitToConvert
     {
-        public double Convert(double value);
+        public string Convert(double value);
     }
 }
